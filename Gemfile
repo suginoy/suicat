@@ -55,3 +55,5 @@ end
 gem 'devise'
 gem 'omniauth-twitter'
 gem 'haml-rails'
+gem 'nokogiri'
+gem 'activerecord-import'
