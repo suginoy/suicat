@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131002092312) do
+ActiveRecord::Schema.define(version: 20131002124725) do
+
+  create_table "raw_histories", force: true do |t|
+    t.integer  "user_id",    null: false
+    t.text     "data",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "raw_histories", ["user_id"], name: "index_raw_histories_on_user_id"
 
   create_table "users", force: true do |t|
     t.integer  "sign_in_count",      default: 0, null: false
