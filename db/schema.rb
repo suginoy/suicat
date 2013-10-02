@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131002124725) do
+ActiveRecord::Schema.define(version: 20131002125811) do
+
+  create_table "histories", force: true do |t|
+    t.integer  "user_id",        null: false
+    t.integer  "raw_history_id", null: false
+    t.string   "from"
+    t.string   "to"
+    t.string   "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "histories", ["raw_history_id"], name: "index_histories_on_raw_history_id"
+  add_index "histories", ["user_id"], name: "index_histories_on_user_id"
 
   create_table "raw_histories", force: true do |t|
     t.integer  "user_id",    null: false
