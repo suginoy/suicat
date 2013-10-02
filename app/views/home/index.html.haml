@@ -1,0 +1,5 @@
+- if user_signed_in?
+  = current_user.name
+  = link_to 'ログアウト', :logout, method: :delete
+- else
+  = link_to "twitterでログイン", user_omniauth_authorize_path(:twitter)

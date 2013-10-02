@@ -43,3 +43,15 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+group :development do
+  gem "pry-rails"
+  gem "pry-doc"
+  gem "pry-nav"
+  gem "quiet_assets"
+  gem 'dotenv-rails'
+end
+
+gem 'devise'
+gem 'omniauth-twitter'
+gem 'haml-rails'
