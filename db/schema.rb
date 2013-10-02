@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131002125811) do
+ActiveRecord::Schema.define(version: 20131002142729) do
 
   create_table "histories", force: true do |t|
     t.integer  "user_id",        null: false
@@ -34,6 +34,17 @@ ActiveRecord::Schema.define(version: 20131002125811) do
   end
 
   add_index "raw_histories", ["user_id"], name: "index_raw_histories_on_user_id"
+
+  create_table "stations", force: true do |t|
+    t.string   "area_code"
+    t.string   "line_code"
+    t.string   "station_code"
+    t.string   "area_name"
+    t.string   "line_name"
+    t.string   "station_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.integer  "sign_in_count",      default: 0, null: false
