@@ -52,6 +52,11 @@ group :development do
   gem 'dotenv-rails'
 end
 
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'spring'
+end
+
 gem 'devise'
 gem 'omniauth-twitter'
 gem 'haml-rails'
