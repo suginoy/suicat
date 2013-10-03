@@ -1,10 +1,9 @@
 source 'https://rubygems.org'
 
+ruby "2.0.0"
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
-
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -50,6 +49,8 @@ group :development do
   gem "pry-nav"
   gem "quiet_assets"
   gem 'dotenv-rails'
+
+  gem 'sqlite3'
 end
 
 group :development, :test do
@@ -59,6 +60,10 @@ group :development, :test do
   gem 'guard'
   gem 'guard-rspec'
   gem 'guard-spring'
+end
+
+group :production do
+  gem "pg"
 end
 
 gem 'devise'
