@@ -11,29 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131002142729) do
+ActiveRecord::Schema.define(version: 20131003071922) do
+
+  create_table "cards", force: true do |t|
+    t.string   "idm"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "histories", force: true do |t|
-    t.integer  "user_id",        null: false
-    t.integer  "raw_history_id", null: false
+    t.integer  "user_id",    null: false
+    t.integer  "card_id",    null: false
+    t.text     "raw_data"
     t.string   "from"
     t.string   "to"
-    t.string   "price"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "histories", ["raw_history_id"], name: "index_histories_on_raw_history_id"
+  add_index "histories", ["card_id"], name: "index_histories_on_card_id"
   add_index "histories", ["user_id"], name: "index_histories_on_user_id"
-
-  create_table "raw_histories", force: true do |t|
-    t.integer  "user_id",    null: false
-    t.text     "data",       null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "raw_histories", ["user_id"], name: "index_raw_histories_on_user_id"
 
   create_table "stations", force: true do |t|
     t.string   "area_code"
