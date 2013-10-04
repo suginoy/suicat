@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   devise :trackable, :omniauthable
 
+  has_many :histories
+
   class << self
     def find_for_twitter_oauth(auth, signed_in_resource=nil)
       User.where(provider: auth.provider, uid: auth.uid)

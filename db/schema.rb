@@ -13,15 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20131003071922) do
 
-  create_table "cards", force: true do |t|
-    t.string   "idm"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "histories", force: true do |t|
     t.integer  "user_id",    null: false
-    t.integer  "card_id",    null: false
+    t.string   "idm"
     t.text     "raw_data"
     t.string   "from"
     t.string   "to"
@@ -29,7 +23,6 @@ ActiveRecord::Schema.define(version: 20131003071922) do
     t.datetime "updated_at"
   end
 
-  add_index "histories", ["card_id"], name: "index_histories_on_card_id"
   add_index "histories", ["user_id"], name: "index_histories_on_user_id"
 
   create_table "stations", force: true do |t|
