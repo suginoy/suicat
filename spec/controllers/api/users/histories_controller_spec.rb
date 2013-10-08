@@ -6,7 +6,11 @@ describe Api::Users::HistoriesController do
   end
 
   describe "#create" do
-    before { post :create, api_history_params.merge(format: :json) }
+    before do
+      user = build(:user, key: "key")
+      User.stub_chain(:where, :first).and_return(user)
+      post :create, api_history_params.merge(format: :json)
+    end
     its(:response) { should be_success }
   end
 end
