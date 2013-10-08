@@ -1,6 +1,5 @@
 class History < ActiveRecord::Base
   belongs_to :user
-  belongs_to :card
 
   TERMINAL_TYPES = {
     0x03 => '精算機',
@@ -107,8 +106,7 @@ class History < ActiveRecord::Base
     raw_data[14, 2]
   end
 
-  def from
-    return @from if @from
+  def from_station_name
     station = Station.where(area_code: from_area_code,
                             line_code: "%x" % from_line_code.hex,
                             station_code: "%x" % from_station_code.hex).first
@@ -135,8 +133,7 @@ class History < ActiveRecord::Base
     raw_data[18, 2]
   end
 
-  def to
-    return @to if @to
+  def to_station_name
     station = Station.where(area_code: to_area_code,
                             line_code: "%x" % to_line_code.hex,
                             station_code: "%x" % to_station_code.hex).first
