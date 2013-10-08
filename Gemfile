@@ -49,8 +49,6 @@ group :development do
   gem "pry-nav"
   gem "quiet_assets"
   gem 'dotenv-rails'
-
-  gem 'sqlite3'
 end
 
 group :development, :test do
@@ -59,6 +57,8 @@ group :development, :test do
   gem "factory_girl_rails"
   gem 'spring'
   gem 'guard-spring'
+
+  gem 'sqlite3'
 end
 
 group :production do
