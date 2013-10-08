@@ -14,6 +14,7 @@ class Api::History
   def save
     if valid?
       @user = User.where(id: @user_id).first
+      return false if @user.key != @key
       current_history = ::History.where(idm: @idm).first
 
       histories = []
