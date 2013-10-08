@@ -1,0 +1,7 @@
+#!/bin/sh
+#/etc/init.d/suicatctl
+
+RUBY=/usr/local/rbenv/shims/ruby
+APP=/opt/suicat/script/suicat_daemon.rb
+
+$RUBY $APP "$1"
