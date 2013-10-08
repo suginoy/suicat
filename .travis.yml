@@ -1,0 +1,20 @@
+language: ruby
+rvm:
+  - 2.0.0
+branches:
+  only:
+    - master
+    - develop
+    - feature/travis
+bundler_args: --without development --path vendor/bundle
+script: "bundle exec rake db:migrate spec"
+notifications:
+  email: false
+env:
+  global:
+    secure: |-
+      WmjPp2Xk3Btg2YB4DaaDSCkkdMdEpThGJVi6Dc4M+W7K2gwHOD7/o4zw/5TD
+      fSryEVPfDaXGmzrAOkI4zhsTz/EWp52CLHT/djLcn2d2azuhw6dy0w6lFYMK
+      m9CwWnjP8ErDXG5TCd2omPXLEJVUCPpPUu7O7CLfnQro1X8OF8c=
+after_success:
+  - script/deploy.sh
