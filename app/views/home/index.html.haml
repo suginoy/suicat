@@ -1,6 +1,0 @@
-- if user_signed_in?
-  = current_user.name
-  = link_to 'ログアウト', :logout, method: :delete
-  = api_user_histories_url(current_user)
-- else
-  = link_to "twitterでログイン", user_omniauth_authorize_path(:twitter)
