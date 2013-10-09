@@ -1,0 +1,16 @@
+%table
+  %thead
+    %tr
+      %th idm
+      %th raw_data
+      %th from
+      %th to
+      %th created_at
+  %tbody
+    - @histories.each do |h|
+      %tr
+        %td= h.idm
+        %td= h.raw_data
+        %td= h.from
+        %td= h.to
+        %td= h.created_at
