@@ -2,6 +2,9 @@
 require 'spec_helper'
 
 describe History do
+  it { should validate_presence_of(:idm) }
+  it { should validate_presence_of(:raw_data) }
+
   context "test_history" do
     subject { History.new(raw_data: '160100021b3dc405c436740400000300') }
     its(:terminal) { should eq '改札機' }
