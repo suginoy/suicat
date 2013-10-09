@@ -1,6 +1,9 @@
 class History < ActiveRecord::Base
   belongs_to :user
 
+  validates :idm, presence: true, format: { with: /\h/i }, length: { is: 16 }
+  validates :raw_data, presence: true, format: { with: /\h/i }, length: { is: 32 }
+
   TERMINAL_TYPES = {
     0x03 => '精算機',
     0x05 => '車載端末',
