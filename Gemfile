@@ -56,13 +56,14 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem "factory_girl_rails"
   gem 'spring'
-  gem 'guard-spring'
+  gem 'guard-rspec'
 
   gem 'sqlite3'
 end
 
 group :production do
-  gem "pg"
+  gem 'pg'
+  gem 'rails_12factor'
 end
 
 gem 'devise'
