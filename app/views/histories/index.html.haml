@@ -1,4 +1,4 @@
-%table
+%table.table.table-bordered.table-hover
   %thead
     %tr
       %th idm
@@ -15,4 +15,4 @@
         %td= h.date
         %td= h.from
         %td= h.to
-        %td= h.created_at
+        %td=l h.created_at, format: '%Y-%m-%d %H:%M:%S'
