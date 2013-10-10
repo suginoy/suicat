@@ -71,4 +71,5 @@ gem 'omniauth-twitter'
 gem 'haml-rails'
 gem 'nokogiri'
 gem 'activerecord-import'
+gem 'bootstrap-sass'
 gem 'compass-rails', github: "Compass/compass-rails", branch: "rails4-hack"
