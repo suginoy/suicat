@@ -1,6 +1,9 @@
 class Api::Users::HistoriesController < ApplicationController
   protect_from_forgery with: :null_session
 
+  def index
+  end
+
   def create
     @api_history = Api::History.new(api_history_params)
 

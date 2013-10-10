@@ -1,14 +1,18 @@
 - if user_signed_in?
-  .twitter-icon
-  .twitter-name
-    = current_user.name
-  .logout
-    = link_to 'ログアウト', :logout, method: :delete
-  .api-url
-    %b API URL
-    = api_user_histories_url(current_user, format: :json)
-  .api-key
-    %b API Key
-    = current_user.key
+  .profile
+    .twitter-icon
+      = image_tag session["twitter.info"]["image"]
+    .twitter-name
+      %b= current_user.name
+    .logout
+      = button_to 'ログアウト', :logout, method: :delete, class: 'btn-primary'
+    .api-url
+      %b API URL
+      %br
+      = link_to api_user_histories_url(current_user), api_user_histories_url(current_user)
+    .api-key
+      %b API Key
+      %br
+      = current_user.key
 - else
   = link_to image_tag("sign-in-with-twitter-gray.png"), user_omniauth_authorize_path(:twitter)
