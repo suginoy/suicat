@@ -1,0 +1,5 @@
+#histories-pagination {
+  @include display-box();
+  @include box-pack(end);
+  width: 100%;
+}
