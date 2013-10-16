@@ -1,0 +1,7 @@
+#histories-pagination
+  = paginate @histories
+
+- @histories.each do |h|
+  .history
+    %p= h.date
+    %p= "#{h.from} - #{h.to}"
