@@ -1,7 +1,7 @@
 - if user_signed_in?
   .profile
     .twitter-icon
-      = image_tag session["twitter.info"]["image"]
+      = image_tag session["twitter.info"]["image"] if session["twitter.info"]
     .twitter-name
       %b= current_user.name
     .logout
